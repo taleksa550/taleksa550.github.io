@@ -1,0 +1,453 @@
+* 
+	box-sizing: border-box
+html 
+	min-width: 320px
+	margin: 0 auto
+body
+	margin: 0
+	.menu_wrap
+		padding: 0
+	.menu_btn
+		width: 100%
+		height: 50px
+		background: #111
+		padding: 0 15px
+		cursor: pointer
+		&::before
+			content: ''
+			display: block
+			width: 28px
+			height: 24px
+			background-image: url(images/sprite.png)
+			background-position: -72px -462px
+			background-repeat: no-repeat
+			float: right
+			clear: both
+			margin: 12px 10px
+
+	.cross
+		@extend .menu_btn
+		
+		&::before
+			content: ''
+			display: block
+			width: 28px
+			height: 24px
+			background-image: url(images/sprite.png)
+			background-position: -40px -462px
+			float: right
+			clear: both
+
+	.inner_menu
+		font-family: 'Roboto', sans-serif
+		font-weight: bold
+		font-size: 16px
+		width: 100%
+		background: #000
+		text-align: center
+		display: none
+		padding-top: 20px
+
+		i 
+			color: #fff
+			font:
+				family: 'Broadway', sans-serif
+				size: 50px
+			color: #7e2e39
+			border: 2px solid #7e2e39
+			border-radius: 5px 10px
+			padding: 0 15px
+		.menu
+			padding: 0
+			list-style: none
+			margin: 0
+			li 
+				display: block
+				padding: 15px 0
+				&:hover 
+					display: block
+					background: #181818
+					padding: 15px 0
+				
+				a 
+					text-decoration: none
+					margin: 0px
+					color: #fff
+					&:hover 
+						color: #fff
+						text-decoration: none
+			.button
+				margin-top: 50px
+			.button a
+				background: #7e2e39
+				border: none
+				padding: 10px 15px
+				border-radius: 5px
+				color: #fff
+				text-transform: uppercase
+				&:hover
+					background: #efa2ac
+
+	.main_content
+		font:
+			family: 'Roboto', sans-serif
+			weight: 300
+			size: 20px
+		color: #000
+		text-align: center
+		h2
+			@extend .main_content
+			margin: 0 0 40px
+			font:
+				weight: bold
+				size: 40px
+		p
+			@extend .main_content
+			padding: 0 20px
+			line-height: 1.4
+		ul
+			text-align: left
+			margin-bottom: 30px
+		
+		.block_1
+			background-image: url(images/bg.jpg)
+			background-position: center
+			height: 100vh
+
+			h1
+				margin: 0 0 40px
+				font:
+					family: 'Roboto', sans-serif
+					weight: 800
+					size: 50px
+				color: #fff
+				text-align: center
+				padding-top: 40vh
+
+			p 
+				color: #fff
+				white-space: pre-wrap
+				margin-bottom: 100px
+			.arrow
+				display: block
+				width: 100%
+				margin: 0 auto
+				cursor: pointer
+
+				
+			.arrow::before
+				content: ''
+				display: block
+				width: 32px
+				height: 16px
+				background-image: url(images/sprite.png)
+				background-position: -4px -462px
+				background-repeat: no-repeat
+				margin: 0 auto
+
+				
+
+		.block_2
+			height: 100vh
+			h2
+				padding-top: 30vh
+
+
+		.block_3
+			padding: 100px 0
+			background: #f0f0f0
+
+			p
+				margin-bottom: 100px
+				
+			.item_1
+				margin-bottom: 100px
+				&::before
+					content: ''
+					display: block
+					width: 150px
+					height: 150px
+					background-image: url(images/sprite.png)
+					background-position: -4px -0px
+					background-repeat: no-repeat
+					margin: 0 auto
+				h2
+
+					padding-top: 30vh
+				p
+
+					margin-bottom: 0
+
+
+			.item_2
+				@extend .item_1
+				&::before
+					content: ''
+					display: block
+					width: 150px
+					height: 150px
+					background-image: url(images/sprite.png)
+					background-position: -4px -154px
+					background-repeat: no-repeat
+					margin: 0 auto
+			
+
+			.item_3
+				&::before
+					content: ''
+					display: block
+					width: 150px
+					height: 150px
+					background-image: url(images/sprite.png)
+					background-position: -4px -308px
+					background-repeat: no-repeat
+					margin: 0 auto
+		.price_block
+			padding: 100px 0 0
+			text-align: center
+
+			ul
+				text-align: center
+				list-style: none
+				padding-left: 0
+			p
+				margin-bottom: 100px
+
+			.price_btn
+				display: block
+				background: #7e2e39
+				border: none
+				padding: 10px 15px
+				border-radius: 5px
+				color: #fff
+				text-transform: uppercase
+				margin: 20px auto 100px
+				&:hover
+					background: #efa2ac
+
+
+
+		.block_4
+			@extend .block_3
+
+			section
+				text-align: center
+				margin: 100px auto 0
+
+
+				&::before
+					content: ''
+					display: inline-block
+					width: 75px
+					height: 71px
+					background-image: url(images/sprite.png)
+					background-position: -30px -500px
+					background-repeat: no-repeat
+					margin: 0 auto
+				h3
+					@extend .main_content
+					font-weight: bold
+				p
+					margin-bottom: 0px
+					font-size: 16px
+	footer
+		padding: 100px 0
+		background: #242424
+		text-align: center
+		margin: 0 auto
+		display: flex
+		flex-direction: column
+		align-content: center
+		.footer_left
+			margin-bottom: 50px
+
+		.fill
+			display: block
+			border: 2px solid #7e2e39
+			margin-bottom: 20px
+			padding: 10px 
+			width: calc(100% - 20px)
+			margin: 0 auto 20px
+			border-radius: 5px
+		textarea
+			border: 2px solid #7e2e39
+			margin-bottom: 20px
+			padding: 10px 
+			width: calc(100% - 20px)
+			border-radius: 5px
+
+		.send_btn
+			display: block
+			background: #7e2e39
+			border: none
+			padding: 10px 15px
+			color: #fff
+			border-radius: 5px
+			text-transform: uppercase
+			margin: 20px auto 100px
+			cursor: pointer
+			&:hover
+				background: #efa2ac
+		h3
+			font:
+				family: 'Roboto', sans-serif
+				weight: 300
+				size: 20px
+			color: #fff
+			text-align: center
+			font-weight: bold
+			margin: 0 0 40px
+		a
+			text-decoration: none
+			color: #fff
+			font:
+				family: 'Roboto', sans-serif
+				size: 25px
+				weight: normal
+		.icons
+			width: 100%
+			list-style: none
+			padding-left: 0
+			display: flex
+			align-content: center
+			justify-content: center
+			li
+				margin: 10px
+				:hover
+					opacity: 0.5
+			.icon_1
+				display: block
+				&::before
+					content: ''
+					width: 37px
+					height: 37px
+					display: block
+					background-image: url(images/sprite.png)
+					background-position: 0 -582px
+					background-repeat: no-repeat
+			.icon_2
+				@extend .icon_1
+				&::before
+					background-position: -45px -582px
+
+			.icon_3
+				@extend .icon_1
+				&::before
+					background-position: -91px -582px
+	.modal_form 
+		width: 300px
+		height: 200px
+		border-radius: 5px
+		border: 3px #7e2e39 solid
+		background: #fff
+		position: fixed
+		top: 45%
+		left: 50%
+		margin-top: -150px
+		margin-left: -150px
+		display: none
+		opacity: 0
+		z-index: 5
+		padding: 20px 10px
+		h2
+			font:
+				family: 'Roboto', sans-serif
+				weight: 600
+				size: 30px
+			color: #7e2e39
+			text-align: center
+			font-weight: bold
+			margin: 0 0 20px
+		input
+			display: block
+			border: 2px solid #7e2e39
+			padding: 10px 
+			margin: 0 auto 20px
+			border-radius: 5px
+		.send_btn
+			background: #7e2e39
+			border: none
+			padding: 10px 15px
+			color: #fff
+			text-transform: uppercase
+			margin: 0 auto
+			cursor: pointer
+			&:hover
+				background: #efa2ac
+	.overlay 
+		z-index: 3
+		position: fixed
+		background-color: #000
+		opacity: 0.8
+		filter: alpha(opacity=80%)
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		cursor: pointer
+		display: none
+
+@media (min-width: 768px)
+	.menu_btn
+		display: none
+	.menu_wrap
+		margin-top: 20px
+		.inner_menu
+			padding-top: 0
+	.menu_wrap .inner_menu, .menu, .inner_menu i
+		
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		background: none
+		margin: 0 10px
+		.menu li
+			margin: 0 20px 0
+			&:hover 
+				background: none
+				
+		.menu .button
+			margin-top: 0
+
+		
+	.block_1
+		margin-top: -100px
+
+	.footer_right
+		.fill
+			width: 50%
+
+		textarea
+			width: 50%
+
+@media (min-width: 1024px)
+
+	.block_3 .items
+		display: flex
+		flex-flow: row nowrap
+		
+	.flex_prices
+		display: flex
+		flex-flow: row nowrap
+		margin-bottom: 100px
+		section
+			border: 1px solid #7e2e39
+			border-radius: 25px
+			padding: 10px
+			margin: 0 10px
+			cursor: pointer
+			&:hover
+				border: 1px solid #efa2ac
+	.flex_block_4
+		display: flex
+		justify-content: space-between
+		flex-flow: row nowrap
+	body .main_content .block_4 section, body .main_content .block_4 section h3 .block_4 section
+		width: calc(33% - 10px)
+		margin-top: 0 
+	.footer
+		flex-direction: row
+		padding-bottom: 0
+		.footer_right, .footer_left
+			width: calc(50% - 20px)
+			margin-bottom: 0
