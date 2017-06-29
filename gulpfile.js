@@ -21,6 +21,16 @@ gulp.task ('css', function() {
     .pipe(gulp.dest(''))
     ;
 });
+gulp.task('server', function() {
+    browserSync({
+        server: {
+            baseDir: ''
+        },
+        files: ['*.html', 'out/**/*.css'],
+        port: 8080
+    });
+});
+
 
 var cmq = require('gulp-combine-media-queries');
  

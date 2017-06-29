@@ -18,13 +18,14 @@ body, html {
   background: #0e5365; }
   body h2, html h2 {
     line-height: 1.4;
-    letter-spacing: normal;
+    letter-spacing: 0.3px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 28px;
     color: #fff;
     text-align: center;
     margin-top: 0;
+    margin-bottom: 0;
     position: relative;
     text-transform: uppercase; }
     body h2::after, html h2::after {
@@ -35,12 +36,13 @@ body, html {
       font-weight: 800;
       line-height: 0.2;
       font-size: 60px;
+      margin: 0;
       opacity: 0.1;
       white-space: nowrap;
       color: #f5f5f5; }
   body h3, html h3 {
     line-height: 1.4;
-    letter-spacing: normal;
+    letter-spacing: 0.3px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 24px;
@@ -48,23 +50,32 @@ body, html {
     text-align: center; }
   body p, html p {
     line-height: 1.4;
-    letter-spacing: normal;
+    letter-spacing: 0.3px;
     font-family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 14px;
     color: #fff;
     text-align: center; }
-  body .btn, body .block_8 ul a.toggle, html .block_8 ul body a.toggle, body .block_9 .price_block .action_button, html .block_9 .price_block body .action_button, html .btn, body .block_8 ul html a.toggle, html .block_8 ul a.toggle, body .block_9 .price_block html .action_button, html .block_9 .price_block .action_button {
+  body .btn, body .block_8 ul li a.toggle, body .block_8 ul li a.toggle_in, html .block_8 ul li body a.toggle, html .block_8 ul li body a.toggle_in, body .block_9 .price_block .action_button, html .block_9 .price_block body .action_button, html .btn, body .block_8 ul li html a.toggle, body .block_8 ul li html a.toggle_in, html .block_8 ul li a.toggle, html .block_8 ul li a.toggle_in, body .block_9 .price_block html .action_button, html .block_9 .price_block .action_button {
     box-shadow: inset -2px -2px 2px rgba(255, 255, 255, 0.4), inset 2px 2px 2px rgba(255, 255, 255, 0.4);
     background: #0e5365;
     border-radius: 15px;
     border: none;
+    position: relative;
+    margin: 16px;
     font-size: 20px;
     line-height: 2;
     color: #fff;
     outline: none;
     cursor: pointer; }
-    body .btn:hover, body .block_8 ul a.toggle:hover, html .block_8 ul body a.toggle:hover, body .block_9 .price_block .action_button:hover, html .block_9 .price_block body .action_button:hover, html .btn:hover, body .block_8 ul html a.toggle:hover, html .block_8 ul a.toggle:hover, body .block_9 .price_block html .action_button:hover, html .block_9 .price_block .action_button:hover {
+    body .btn::before, body .block_8 ul li a.toggle::before, body .block_8 ul li a.toggle_in::before, html .block_8 ul li body a.toggle::before, html .block_8 ul li body a.toggle_in::before, body .block_9 .price_block .action_button::before, html .block_9 .price_block body .action_button::before, html .btn::before, body .block_8 ul li html a.toggle::before, body .block_8 ul li html a.toggle_in::before, html .block_8 ul li a.toggle::before, html .block_8 ul li a.toggle_in::before, body .block_9 .price_block html .action_button::before, html .block_9 .price_block .action_button::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      bottom: -10px;
+      left: -10px;
+      right: -10px; }
+    body .btn:hover, body .block_8 ul li a.toggle:hover, body .block_8 ul li a.toggle_in:hover, html .block_8 ul li body a.toggle:hover, html .block_8 ul li body a.toggle_in:hover, body .block_9 .price_block .action_button:hover, html .block_9 .price_block body .action_button:hover, html .btn:hover, body .block_8 ul li html a.toggle:hover, body .block_8 ul li html a.toggle_in:hover, html .block_8 ul li a.toggle:hover, html .block_8 ul li a.toggle_in:hover, body .block_9 .price_block html .action_button:hover, html .block_9 .price_block .action_button:hover {
       box-shadow: inset -2px -2px 2px rgba(255, 255, 255, 0.2), inset 2px 2px 2px rgba(255, 255, 255, 0.2); }
   body input, body .block_10 textarea, html .block_10 body textarea, html input, body .block_10 html textarea, html .block_10 textarea {
     box-shadow: inset -2px -2px 2px rgba(255, 255, 255, 0.4), inset 2px 2px 2px rgba(255, 255, 255, 0.4);
@@ -158,34 +169,32 @@ body, html {
     background: url(../images/dark.png) no-repeat center;
     background-attachment: fixed;
     background-size: cover;
-    padding: 48px 0; }
+    padding: 48px 0px; }
     body .block_2 form, html .block_2 form {
-      text-align: center; }
+      text-align: center;
+      padding: 16px; }
     body .block_2 .modal_form, html .block_2 .modal_form {
-      width: 500px;
-      height: 300px;
-      border-radius: 5px;
-      border: 3px #7e2e39 solid;
-      background: #fff;
+      box-shadow: inset -2px -2px 2px rgba(255, 255, 255, 0.4), inset 2px 2px 2px rgba(255, 255, 255, 0.4);
+      background: #0e5365;
+      border-radius: 15px;
+      width: 300px;
+      height: 200px;
+      border: 3px #00B6E5 solid;
       position: fixed;
       top: 50%;
       left: 50%;
-      margin-top: -150px;
-      margin-left: -250px;
+      margin-top: -100px;
+      margin-left: -150px;
+      vertical-align: middle;
       display: none;
       opacity: 0;
       z-index: 2000;
       padding: 20px 10px; }
-      body .block_2 .modal_form .send_btn, html .block_2 .modal_form .send_btn {
-        background: #7e2e39;
-        border: none;
-        padding: 10px 15px;
+      body .block_2 .modal_form h4, html .block_2 .modal_form h4 {
         color: #fff;
-        text-transform: uppercase;
-        margin: 0 auto;
-        cursor: pointer; }
-        body .block_2 .modal_form .send_btn:hover, html .block_2 .modal_form .send_btn:hover {
-          background: #efa2ac; }
+        text-align: center; }
+        body .block_2 .modal_form h4::after, html .block_2 .modal_form h4::after {
+          content: ':)'; }
     body .block_2 .overlay, html .block_2 .overlay {
       z-index: 1990;
       position: fixed;
@@ -240,6 +249,7 @@ body, html {
       width: 32px;
       height: 32px;
       position: relative;
+      padding: 8px;
       top: 160px;
       cursor: pointer;
       text-decoration: none; }
@@ -262,21 +272,21 @@ body, html {
       display: flex;
       flex-flow: row wrap;
       justify-content: center; }
-      body .block_4 .team .first section:nth-child(odd), html .block_4 .team .first section:nth-child(odd) {
+      body .block_4 .team .first div:nth-child(odd), html .block_4 .team .first div:nth-child(odd) {
         padding-left: 100px; }
-      body .block_4 .team .first section:nth-child(even), html .block_4 .team .first section:nth-child(even) {
+      body .block_4 .team .first div:nth-child(even), html .block_4 .team .first div:nth-child(even) {
         padding-right: 100px; }
-      body .block_4 .team .second section:nth-child(odd), html .block_4 .team .second section:nth-child(odd) {
+      body .block_4 .team .second div:nth-child(odd), html .block_4 .team .second div:nth-child(odd) {
         padding-left: 100px;
         padding-right: 0; }
-      body .block_4 .team .second section:nth-child(even), html .block_4 .team .second section:nth-child(even) {
+      body .block_4 .team .second div:nth-child(even), html .block_4 .team .second div:nth-child(even) {
         padding-right: 100px;
         padding-left: 0px; }
-      body .block_4 .team .third section:nth-child(odd), html .block_4 .team .third section:nth-child(odd) {
+      body .block_4 .team .third div:nth-child(odd), html .block_4 .team .third div:nth-child(odd) {
         padding-left: 100px; }
-      body .block_4 .team .third section:nth-child(even), html .block_4 .team .third section:nth-child(even) {
+      body .block_4 .team .third div:nth-child(even), html .block_4 .team .third div:nth-child(even) {
         padding-right: 100px; }
-    body .block_4 .team section span, html .block_4 .team section span {
+    body .block_4 .team div section, html .block_4 .team div section {
       transform: rotate(45deg);
       background: #fff;
       display: block;
@@ -287,20 +297,18 @@ body, html {
       margin: -40px 38px 0;
       border: 1px solid #0e5365;
       cursor: pointer; }
-      body .block_4 .team section span:hover, html .block_4 .team section span:hover {
+      body .block_4 .team div section:hover, html .block_4 .team div section:hover {
         border: 5px solid #0e5365;
         -webkit-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out; }
-      body .block_4 .team section span:hover img, html .block_4 .team section span:hover img {
-        opacity: 0.3; }
-      body .block_4 .team section span:hover h3, html .block_4 .team section span:hover h3 {
+      body .block_4 .team div section:hover h3, html .block_4 .team div section:hover h3 {
         top: 40%;
         opacity: 1;
         -webkit-transition: all 200ms ease-in-out;
         transition: all 200ms ease-in-out;
         -webkit-transition-delay: 0;
         transition-delay: 0; }
-      body .block_4 .team section span:hover p, html .block_4 .team section span:hover p {
+      body .block_4 .team div section:hover p, html .block_4 .team div section:hover p {
         left: 15%;
         top: 35%;
         opacity: 1;
@@ -308,7 +316,9 @@ body, html {
         transition: all 200ms ease-in-out;
         -webkit-transition-delay: 0;
         transition-delay: 0; }
-      body .block_4 .team section span img, html .block_4 .team section span img {
+      body .block_4 .team div section:hover img, html .block_4 .team div section:hover img {
+        opacity: 0.2; }
+      body .block_4 .team div section img, html .block_4 .team div section img {
         transform: rotate(-45deg);
         height: auto;
         display: block;
@@ -316,8 +326,11 @@ body, html {
         text-align: center;
         line-height: 32px;
         position: absolute;
+        top: 10px;
+        left: 0;
+        bottom: 0;
         margin: 0 auto; }
-      body .block_4 .team section span h3, html .block_4 .team section span h3 {
+      body .block_4 .team div section h3, html .block_4 .team div section h3 {
         transform: rotate(-45deg);
         position: relative;
         margin: 0 auto;
@@ -325,7 +338,7 @@ body, html {
         top: 0;
         left: 0px;
         opacity: 0; }
-      body .block_4 .team section span p, html .block_4 .team section span p {
+      body .block_4 .team div section p, html .block_4 .team div section p {
         transform: rotate(-45deg);
         position: relative;
         margin: 0 auto;
@@ -378,12 +391,12 @@ body, html {
       display: flex;
       flex-flow: row wrap;
       justify-content: center; }
-      body .block_6 .flex-container section, html .block_6 .flex-container section {
-        margin: 16px; }
+      body .block_6 .flex-container div, html .block_6 .flex-container div {
+        margin: 16px;
+        text-align: center; }
       body .block_6 .flex-container .count, html .block_6 .flex-container .count {
         color: #fff;
-        font-size: 25px;
-        margin-left: 64px; }
+        font-size: 25px; }
         body .block_6 .flex-container .count::after, html .block_6 .flex-container .count::after {
           content: '';
           width: 128px;
@@ -408,7 +421,7 @@ body, html {
         display: flex;
         flex-flow: row nowrap;
         justify-content: center; }
-        body .block_7 .filter .btn-wrap .btn, body .block_7 .filter .btn-wrap .block_8 ul a.toggle, body .block_8 ul .block_7 .filter .btn-wrap a.toggle, html .block_8 ul body .block_7 .filter .btn-wrap a.toggle, body .block_7 .filter .btn-wrap .block_9 .price_block .action_button, body .block_9 .price_block .block_7 .filter .btn-wrap .action_button, html .block_9 .price_block body .block_7 .filter .btn-wrap .action_button, html .block_7 .filter .btn-wrap .btn, body .block_8 ul html .block_7 .filter .btn-wrap a.toggle, html .block_7 .filter .btn-wrap .block_8 ul a.toggle, html .block_8 ul .block_7 .filter .btn-wrap a.toggle, body .block_9 .price_block html .block_7 .filter .btn-wrap .action_button, html .block_7 .filter .btn-wrap .block_9 .price_block .action_button, html .block_9 .price_block .block_7 .filter .btn-wrap .action_button {
+        body .block_7 .filter .btn-wrap .btn, body .block_7 .filter .btn-wrap .block_8 ul li a.toggle, body .block_8 ul li .block_7 .filter .btn-wrap a.toggle, body .block_7 .filter .btn-wrap .block_8 ul li a.toggle_in, body .block_8 ul li .block_7 .filter .btn-wrap a.toggle_in, html .block_8 ul li body .block_7 .filter .btn-wrap a.toggle, html .block_8 ul li body .block_7 .filter .btn-wrap a.toggle_in, body .block_7 .filter .btn-wrap .block_9 .price_block .action_button, body .block_9 .price_block .block_7 .filter .btn-wrap .action_button, html .block_9 .price_block body .block_7 .filter .btn-wrap .action_button, html .block_7 .filter .btn-wrap .btn, body .block_8 ul li html .block_7 .filter .btn-wrap a.toggle, body .block_8 ul li html .block_7 .filter .btn-wrap a.toggle_in, html .block_7 .filter .btn-wrap .block_8 ul li a.toggle, html .block_8 ul li .block_7 .filter .btn-wrap a.toggle, html .block_7 .filter .btn-wrap .block_8 ul li a.toggle_in, html .block_8 ul li .block_7 .filter .btn-wrap a.toggle_in, body .block_9 .price_block html .block_7 .filter .btn-wrap .action_button, html .block_7 .filter .btn-wrap .block_9 .price_block .action_button, html .block_9 .price_block .block_7 .filter .btn-wrap .action_button {
           margin: 16px 8px;
           display: none; }
       body .block_7 .filter .filter__items, html .block_7 .filter .filter__items {
@@ -422,7 +435,8 @@ body, html {
         overflow: hidden;
         height: 130px;
         width: 150px;
-        margin: 0; }
+        margin: 0;
+        cursor: pointer; }
   body .block_8, html .block_8 {
     padding: 48px 0; }
     body .block_8 ul, html .block_8 ul {
@@ -434,14 +448,15 @@ body, html {
         display: none; }
       body .block_8 ul li, html .block_8 ul li {
         margin: 8px 0; }
-      body .block_8 ul a.toggle, html .block_8 ul a.toggle {
-        text-decoration: none;
-        width: 100%;
-        display: block;
-        color: #fefefe;
-        text-align: center;
-        padding: 8px;
-        transition: background .3s ease; }
+        body .block_8 ul li a.toggle, body .block_8 ul li a.toggle_in, html .block_8 ul li a.toggle, html .block_8 ul li a.toggle_in {
+          text-decoration: none;
+          display: block;
+          color: #fefefe;
+          text-align: center;
+          padding: 8px;
+          transition: background .3s ease; }
+        body .block_8 ul li a.toggle_in, html .block_8 ul li a.toggle_in {
+          padding: 4px; }
   body .block_9, html .block_9 {
     padding: 48px 0; }
     body .block_9 .pricing_table, html .block_9 .pricing_table {
@@ -530,9 +545,9 @@ body, html {
         background-repeat: no-repeat;
         vertical-align: middle; }
       body .block_10 .contact_info .info_1::before, html .block_10 .contact_info .info_1::before {
-        background-position: -104px -1332px; }
+        background-position: -104px -1316px; }
       body .block_10 .contact_info .info_2::before, html .block_10 .contact_info .info_2::before {
-        background-position: -104px -1320px; }
+        background-position: -104px -1332px; }
       body .block_10 .contact_info a, html .block_10 .contact_info a {
         text-decoration: none;
         color: #fff;
@@ -543,6 +558,10 @@ body, html {
       list-style: none;
       padding-left: 0;
       cursor: pointer; }
+      body .block_10 .contact_icons li, html .block_10 .contact_icons li {
+        filter: grayscale(100%); }
+      body .block_10 .contact_icons li:hover, html .block_10 .contact_icons li:hover {
+        filter: none; }
       body .block_10 .contact_icons .icon::before, html .block_10 .contact_icons .icon::before {
         content: '';
         width: 32px;
@@ -566,33 +585,24 @@ body, html {
       margin: 0 auto; }
       body .block_10 .map iframe, html .block_10 .map iframe {
         width: 100%;
-        height: 50vh;
+        height: 30vh;
         border: none; }
 
-@media (min-width: 768px) {
-  body .block_7 .filter .btn-wrap .btn, body .block_7 .filter .btn-wrap .block_8 ul a.toggle, body .block_8 ul .block_7 .filter .btn-wrap a.toggle, html .block_8 ul body .block_7 .filter .btn-wrap a.toggle, body .block_7 .filter .btn-wrap .block_9 .price_block .action_button, body .block_9 .price_block .block_7 .filter .btn-wrap .action_button, html .block_9 .price_block body .block_7 .filter .btn-wrap .action_button {
-    display: block; } }
-
-@media (min-width: 768px) {
-  h2::after {
-    font-size: 150px;
-    line-height: 0.5; } }
-
-@media (min-width: 1024px) {
-  body h2::after {
-    font-size: 200px;
-    line-height: 0.1;
-    margin: 0; } }
+footer {
+  padding: 24px 0;
+  background: #00B6E5; }
+  footer #scrollup {
+    position: fixed;
+    opacity: 0.8;
+    padding: 15px 10px 10px;
+    left: 10px;
+    bottom: 10px;
+    display: none;
+    cursor: pointer; }
 
 @media (min-width: 480px) {
   body .block_3 .carousel .carousel-wrapper .carousel-block {
-    width: 50%; } }
-
-@media (min-width: 768px) {
-  body .block_3 .carousel .carousel-wrapper .carousel-block {
-    width: calc(100%/3); } }
-
-@media (min-width: 480px) and (max-width: 768px) {
+    width: 50%; }
   body .block_9 .price_block {
     width: 50%; }
   body .block_9 .price_block:nth-child(odd) {
@@ -602,18 +612,7 @@ body, html {
   body .block_9 .price_block:nth-child(odd):hover {
     border: 0 none; } }
 
-@media (min-width: 768px) {
-  body .block_9 .price_block {
-    width: 25%; }
-  body .block_9 .price_block {
-    border-right: 1px solid transparent;
-    border-bottom: 0 none; }
-  body .block_9 .price_block:last-child {
-    border-right: 0 none; }
-  body .block_9 .price_block:hover {
-    border: 0 none; } }
-
-@media (min-width: 680px) {
+@media (min-width: 620px) {
   .second {
     padding-left: 0;
     display: flex;
@@ -631,29 +630,39 @@ body, html {
     flex-flow: column wrap;
     justify-content: center;
     margin-left: 0px; }
-  .first section:nth-child(odd) {
+  .first div:nth-child(odd) {
     padding-right: 100px; }
-  .first section:nth-child(even) {
+  .first div:nth-child(even) {
     padding-left: 0px;
     padding-right: 200px; }
-  .second section:nth-child(odd) {
+  .second div:nth-child(odd) {
     padding-right: 0;
     padding-left: 200px; }
-  .second section:nth-child(even) {
+  .second div:nth-child(even) {
     padding-left: 200px;
     padding-right: 0px; }
-  .third section:nth-child(odd) {
+  .third div:nth-child(odd) {
     padding-right: 200px; }
-  .third section:nth-child(even) {
+  .third div:nth-child(even) {
     padding-left: 0px; } }
 
-@media (min-width: 1024px) {
-  body .block_4 {
-    height: 100vh; }
-    body .block_4 .third {
-      margin-left: -116px; }
-    body .block_4 .third section:nth-child(odd) {
-      padding-right: 0px; } }
+@media (min-width: 768px) {
+  body .block_7 .filter .btn-wrap .btn, body .block_7 .filter .btn-wrap .block_8 ul li a.toggle, body .block_8 ul li .block_7 .filter .btn-wrap a.toggle, body .block_7 .filter .btn-wrap .block_8 ul li a.toggle_in, body .block_8 ul li .block_7 .filter .btn-wrap a.toggle_in, html .block_8 ul li body .block_7 .filter .btn-wrap a.toggle, html .block_8 ul li body .block_7 .filter .btn-wrap a.toggle_in, body .block_7 .filter .btn-wrap .block_9 .price_block .action_button, body .block_9 .price_block .block_7 .filter .btn-wrap .action_button, html .block_9 .price_block body .block_7 .filter .btn-wrap .action_button {
+    display: block; }
+  h2::after {
+    font-size: 150px;
+    line-height: 45; }
+  body .block_3 .carousel .carousel-wrapper .carousel-block {
+    width: calc(100%/3); }
+  body .block_9 .price_block {
+    width: 25%; }
+  body .block_9 .price_block {
+    border-right: 1px solid transparent;
+    border-bottom: 0 none; }
+  body .block_9 .price_block:last-child {
+    border-right: 0 none; }
+  body .block_9 .price_block:hover {
+    border: 0 none; } }
 
 @media (max-width: 768px) {
   .content__item {
@@ -661,11 +670,15 @@ body, html {
   .content__item-img {
     max-width: calc(100% - 80px);
     max-height: 70vh; }
-  .content h2 {
-    font-size: 48px; }
   .content__item-inner {
     font-size: 82%;
-    padding: 64px 48px 32px; } }
+    padding: 64px 48px 32px; }
+  .content h2 {
+    font-size: 24px; }
+  .content h3 {
+    font-size: 16px; }
+  .content p {
+    font-size: 12px; } }
 
 @media (min-width: 960px) {
   body .header .menu-wrapper .menu .hamburger {
@@ -677,8 +690,26 @@ body, html {
   body .header .menu-wrapper .menu {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; } }
-
-@media (max-width: 960px) {
+    justify-content: space-between; }
   body .block_1 {
     height: calc(100vh - 48px); } }
+
+@media (min-width: 1024px) {
+  body .block_3, body .block_4, body .block_7, body .block_8, body .block_9, body .block_10 {
+    padding: 48px 24px;
+    height: 100vh; }
+  body .block_2, body .block_5, body .block_6 {
+    padding: 24px 24px 0px;
+    height: 50vh; }
+  body .block_6 p, body .block_5 p {
+    margin-bottom: 0; }
+  body h2::after {
+    font-size: 180px;
+    line-height: 0.1;
+    margin: 0; }
+  body .block_4 {
+    height: 100vh; }
+    body .block_4 .third {
+      margin-left: -116px; }
+    body .block_4 .third div:nth-child(odd) {
+      padding-right: 0px; } }

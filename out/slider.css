@@ -37,7 +37,7 @@
 	font-size: 28px;
 	font-weight: normal;
 	margin: 0 auto;
-	padding: 20px 0 0 0;
+	padding: 50px 0 0 0;
 }
 
 .slide__title span {
@@ -93,12 +93,11 @@
 	display: block;
 }
 
-/* Zoomer */
 
 .zoomer {
 	position: relative;
-	height: 360px;
-  /* this is needed for IE10 so that vertical flexbox centering works */
+	height: 300px;
+
 }
 
 .flex-center {
@@ -225,6 +224,7 @@
 	font-size: 56px;
 	font-weight: normal;
 	margin: 0;
+	letter-spacing: 0.3;
 }
 
 .content h3 {
@@ -232,11 +232,13 @@
 	font-weight: normal;
 	margin: 4px 0 8px;
 	color: #685884;
+	letter-spacing: 0.3;
 }
 
 .content p {
 	font-size: 20px;
 	line-height: 1.5;
+	letter-spacing: 0.3;
 }
 
 .content__item-img {
@@ -400,25 +402,5 @@
 	transition-duration: 1.7s;
 }
 
-
-@media screen and (max-width: 768px) {
-  .content__item {
-    display: block;
-  }
-
-  .content__item-img {
-    max-width: calc(100% - 80px);
-    max-height: 70vh;
-  }
-
-  .content h2 {
-    font-size: 48px;
-  }
-
-  .content__item-inner {
-    font-size: 82%;
-    padding: 64px 48px 32px;
-  }
-}
 
 

@@ -19,10 +19,9 @@ body, html
 	-moz-osx-font-smoothing: grayscale
 	background: $main_color
 
-
 	h2
 		line-height: 1.4
-		letter-spacing: normal
+		letter-spacing: 0.3px
 		font:
 			family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
 			weight: 600
@@ -30,6 +29,7 @@ body, html
 		color: #fff
 		text-align: center
 		margin-top: 0
+		margin-bottom: 0
 		position: relative
 		text-transform: uppercase
 		&::after
@@ -40,6 +40,7 @@ body, html
 			font-weight: 800
 			line-height: 0.2
 			font-size: 60px
+			margin: 0
 			opacity: 0.1
 			white-space: nowrap
 			color: #f5f5f5
@@ -48,7 +49,7 @@ body, html
 
 	h3
 		line-height: 1.4
-		letter-spacing: normal
+		letter-spacing: 0.3px
 		font:
 			family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
 			weight: 600
@@ -57,7 +58,7 @@ body, html
 		text-align: center
 	p
 		line-height: 1.4
-		letter-spacing: normal
+		letter-spacing: 0.3px
 		font:
 			family: "Avenir", 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif
 			weight: 600
@@ -69,11 +70,20 @@ body, html
 		background: $main_color
 		border-radius: 15px
 		border: none
+		position: relative
+		margin: 16px
 		font-size: 20px
 		line-height: 2
 		color: #fff
 		outline: none
 		cursor: pointer
+		&::before
+			content: ''
+			position: absolute
+			top: -10px
+			bottom: -10px
+			left: -10px
+			right: -10px
 		&:hover
 			box-shadow: inset -2px -2px  2px rgba(255,255,255,0.2), inset 2px 2px  2px rgba(255,255,255,0.2)
 	input
@@ -178,6 +188,9 @@ body, html
 				bottom: 0
 				margin: auto
 
+
+			
+
 	.block_1
 		height: calc(100vh - 108px)
 
@@ -187,35 +200,33 @@ body, html
 		background: url(../images/dark.png) no-repeat center
 		background-attachment: fixed
 		background-size: cover
-		padding: 48px 0
+		padding: 48px 0px
 		form
 			text-align: center
+			padding: 16px
 		.modal_form 
-			width: 500px
-			height: 300px
-			border-radius: 5px
-			border: 3px #7e2e39 solid
-			background: #fff
+			box-shadow: inset -2px -2px 2px rgba(255,255,255,.4), inset 2px 2px 2px rgba(255,255,255,.4)
+			background: $main_color
+			border-radius: 15px
+			width: 300px
+			height: 200px
+			border: 3px $second_color solid
 			position: fixed
 			top: 50%
 			left: 50%
-			margin-top: -150px
-			margin-left: -250px
+			margin-top: -100px
+			margin-left: -150px
+			vertical-align: middle
 			display: none
 			opacity: 0
 			z-index: 2000
 			padding: 20px 10px
-
-			.send_btn
-				background: #7e2e39
-				border: none
-				padding: 10px 15px
+			h4
 				color: #fff
-				text-transform: uppercase
-				margin: 0 auto
-				cursor: pointer
-				&:hover
-					background: #efa2ac
+				text-align: center
+				&::after
+					content: ':)'
+
 		.overlay 
 			z-index: 1990
 			position: fixed
@@ -275,6 +286,7 @@ body, html
 			width: 32px
 			height: 32px
 			position: relative
+			padding: 8px
 			top: 160px
 			cursor: pointer
 			text-decoration: none
@@ -300,21 +312,21 @@ body, html
 			display: flex
 			flex-flow: row wrap
 			justify-content: center
-			.first section:nth-child(odd) 
+			.first div:nth-child(odd) 
 				padding-left: 100px
-			.first section:nth-child(even) 
+			.first div:nth-child(even) 
 				padding-right: 100px
-			.second section:nth-child(odd) 
+			.second div:nth-child(odd) 
 				padding-left: 100px
 				padding-right: 0
-			.second section:nth-child(even) 
+			.second div:nth-child(even) 
 				padding-right: 100px
 				padding-left: 0px
-			.third section:nth-child(odd) 
+			.third div:nth-child(odd) 
 				padding-left: 100px
-			.third section:nth-child(even) 
+			.third div:nth-child(even) 
 				padding-right: 100px
-		.team section span 
+		.team div section 
 			transform: rotate(45deg)
 			background: #fff
 			display: block
@@ -330,8 +342,7 @@ body, html
 				border: 5px solid $main_color
 				-webkit-transition: all 300ms ease-in-out
 				transition: all 300ms ease-in-out
-			&:hover img
-				opacity: 0.3
+			
 
 			&:hover h3
 				top: 40%
@@ -348,6 +359,8 @@ body, html
 				transition: all 200ms ease-in-out
 				-webkit-transition-delay: 0
 				transition-delay: 0
+			&:hover img
+				opacity: 0.2
 				
 	
 			img
@@ -358,6 +371,9 @@ body, html
 				text-align: center
 				line-height: 32px
 				position: absolute
+				top: 10px
+				left: 0
+				bottom: 0
 				margin: 0 auto
 			h3
 				transform: rotate(-45deg)
@@ -377,6 +393,7 @@ body, html
 				left: 0
 				opacity: 0
 				font-size: 12px
+			
 
 
 
@@ -431,12 +448,12 @@ body, html
 			display: flex
 			flex-flow: row wrap
 			justify-content: center
-			section
+			div
 				margin: 16px
+				text-align: center
 			.count 
 				color: #fff
 				font-size: 25px
-				margin-left: 64px
 				&::after
 					content: ''
 					width: 128px
@@ -485,6 +502,8 @@ body, html
 				height: 130px
 				width: 150px
 				margin: 0
+				cursor: pointer
+
 	.block_8
 		padding: 48px 0
 
@@ -497,15 +516,18 @@ body, html
 				display: none
 			li 
 				margin: 8px 0
-			a.toggle 
-				@extend .btn
-				text-decoration: none
-				width: 100%
-				display: block
-				color: #fefefe
-				text-align: center
-				padding: 8px
-				transition: background .3s ease
+
+				a.toggle 
+					@extend .btn
+					text-decoration: none
+					display: block
+					color: #fefefe
+					text-align: center
+					padding: 8px
+					transition: background .3s ease
+				a.toggle_in
+					@extend a.toggle
+					padding: 4px
 	
 	.block_9
 		padding: 48px 0
@@ -616,9 +638,9 @@ body, html
 				vertical-align: middle
 
 			.info_1::before
-				background-position: -104px -1332px
+				background-position: -104px -1316px
 			.info_2::before
-				background-position: -104px -1320px
+				background-position: -104px -1332px
 			a
 				text-decoration: none
 				color: #fff
@@ -629,6 +651,10 @@ body, html
 			list-style: none
 			padding-left: 0
 			cursor: pointer
+			li
+				filter: grayscale(100%)
+			li:hover
+				filter: none
 			.icon::before
 				content: ''
 				width: 32px
@@ -637,6 +663,7 @@ body, html
 				margin: 8px
 				background-image: url(../images/sprite.png)
 				background-repeat: no-repeat
+
 			.icon_1::before
 				background-position: -4px -1392px
 			.icon_2::before
@@ -652,34 +679,25 @@ body, html
 			margin: 0 auto
 			iframe
 				width: 100%
-				height: 50vh
+				height: 30vh
 				border: none
 
-@media (min-width: 768px)
-	body .block_7 .filter .btn-wrap .btn
-		display: block
+footer
+	padding: 24px 0
+	background: $second_color
+	#scrollup 
+		position: fixed /* фиксированная позиция */
+		opacity: 0.8 /* прозрачность */
+		padding: 15px 10px 10px /* отступы */
+		left: 10px /* отступ слева */
+		bottom: 10px /* отступ снизу */
+		display: none /* спрятать блок */
+		cursor: pointer
 
-@media (min-width: 768px)
-	h2::after
-		font:
-			size: 150px
-		line-height: 0.5
-
-@media (min-width: 1024px)
-	body h2::after
-		font:
-			size: 200px
-		line-height: 0.1
-		margin: 0
 
 @media (min-width: 480px)
 	body .block_3 .carousel .carousel-wrapper .carousel-block 
 		width: 50%
-@media (min-width: 768px)
-	body .block_3 .carousel .carousel-wrapper .carousel-block 
-		width: calc(100%/3)
-
-@media (min-width : 480px) and (max-width: 768px)
 	body .block_9 .price_block
 		width: 50%
 	body .block_9 .price_block:nth-child(odd) 
@@ -688,18 +706,9 @@ body, html
 		clear: both
 	body .block_9 .price_block:nth-child(odd):hover 
 		border: 0 none
-@media (min-width : 768px)
-	body .block_9 .price_block
-		width: 25%
-	body .block_9 .price_block
-		border-right: 1px solid transparent
-		border-bottom: 0 none
-	body .block_9 .price_block:last-child
-		border-right: 0 none
-	body .block_9 .price_block:hover
-		border: 0 none
 
-@media (min-width: 680px)
+
+@media (min-width: 620px)
 
 	.second
 		padding-left: 0
@@ -719,50 +728,64 @@ body, html
 		justify-content: center
 		margin-left: 0px
 
-	.first section:nth-child(odd) 
+	.first div:nth-child(odd) 
 		padding-right: 100px
-	.first section:nth-child(even) 
+	.first div:nth-child(even) 
 		padding-left: 0px
 		padding-right: 200px
-	.second section:nth-child(odd) 
+	.second div:nth-child(odd) 
 		padding-right: 0
 		padding-left: 200px
-	.second section:nth-child(even) 
+	.second div:nth-child(even) 
 		padding-left: 200px
 		padding-right: 0px
-	.third section:nth-child(odd) 
+	.third div:nth-child(odd) 
 		padding-right: 200px
-	.third section:nth-child(even) 
+	.third div:nth-child(even) 
 		padding-left: 0px
 
 
-@media (min-width: 1024px)
-	body .block_4
-		height: 100vh
-		.third
-			margin-left: -116px
-		.third section:nth-child(odd) 
-			padding-right: 0px		
-		
-			
-@media (max-width: 768px) 
+@media (min-width: 768px)
+	body .block_7 .filter .btn-wrap .btn
+		display: block
+	h2::after
+		font:
+			size: 150px
+		line-height: 45
+	body .block_3 .carousel .carousel-wrapper .carousel-block 
+		width: calc(100%/3)
+	body .block_9 .price_block
+		width: 25%
+	body .block_9 .price_block
+		border-right: 1px solid transparent
+		border-bottom: 0 none
+	body .block_9 .price_block:last-child
+		border-right: 0 none
+	body .block_9 .price_block:hover
+		border: 0 none
+
+@media (max-width: 768px)		
 	.content__item 
 		display: block
-  
 
 	.content__item-img 
 		max-width: calc(100% - 80px)
 		max-height: 70vh
-  
-
-	.content h2 
-		font-size: 48px
-      
 
 	.content__item-inner 
 		font-size: 82%
 		padding: 64px 48px 32px
-  
+
+	.content h2 
+		font-size: 24px
+
+	.content h3 
+		font-size: 16px
+
+	.content p 
+		font-size: 12px
+
+
 
 
 @media (min-width: 960px) 
@@ -781,10 +804,30 @@ body, html
 		display: flex
 		flex-direction: row
 		justify-content: space-between
-	
-
-
-@media (max-width: 960px) 
 
 	body .block_1 
 		height: calc(100vh - 48px)
+
+@media (min-width: 1024px)
+
+	body .block_3, body .block_4, body .block_7, body .block_8, body .block_9, body .block_10
+		padding: 48px 24px 
+		height: 100vh
+	body .block_2, body .block_5, body .block_6
+		padding: 24px 24px 0px
+		height: 50vh
+	body .block_6 p, body .block_5 p
+		margin-bottom: 0
+	body h2::after
+		font:
+			size: 180px
+		line-height: 0.1
+		margin: 0
+	body .block_4
+		height: 100vh
+		.third
+			margin-left: -116px
+		.third div:nth-child(odd) 
+			padding-right: 0px
+
+

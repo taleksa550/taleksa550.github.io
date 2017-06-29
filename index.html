@@ -9,6 +9,7 @@
 	<meta name="keywords" content="animation, movie, 3d, film" />
 	<link rel="shortcut icon" href="favicon.png">
 	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
 	<script src="js/modernizr.custom.js"></script>
 </head>
 <body>
@@ -18,21 +19,21 @@
 			<nav class="menu-wrapper">
 				<ul class="menu">
 					<li class="hamburger"><div class="hamburger__item"><div></div></div></li>
-					<li class="menu__item menu__item--on-page"><a href="#">Home</a></li>
-					<li class="menu__item"><a href="#">Services</a></li>
-					<li class="menu__item"><a href="#">Team</a></li>
-					<li class="menu__item"><a href="#">Experience</a></li>
-					<li class="menu__item"><a href="#">Portfolio</a></li>
-					<li class="menu__item"><a href="#">Statistics</a></li>
-					<li class="menu__item"><a href="#">FAQ</a></li>
-					<li class="menu__item"><a href="#">Prices</a></li>
-					<li class="menu__item"><a href="#">Contacts</a></li>
+					<li class="menu__item menu__item--on-page"><a href="#block_1">Home</a></li>
+					<li class="menu__item"><a href="#block_3">Services</a></li>
+					<li class="menu__item"><a href="#block_4">Team</a></li>
+					<li class="menu__item"><a href="#block_5">Skills</a></li>
+					<li class="menu__item"><a href="#block_6">Facts</a></li>
+					<li class="menu__item"><a href="#block_7">Portfolio</a></li>
+					<li class="menu__item"><a href="#block_8">FAQ</a></li>
+					<li class="menu__item"><a href="#block_9">Prices</a></li>
+					<li class="menu__item"><a href="#block_10">Contacts</a></li>
 				</ul>
 			</nav>
 		</header>
 		<!-- Main content -->
 		<div class="main">
-			<div class="block_1">
+			<div class="block_1" id="block_1">
 				<section class="slider">
 					<div class="slide slide--current" data-content="content-1">
 						<div class="slide__mover">
@@ -138,7 +139,7 @@
 						<div class="content__item-inner">
 							<h2>Peter Pan</h2>
 							<h3>He flies without wings..</h3>
-							<p>Peter travels from the enchanted isle of Never Land all the way to London just to hear Wendy Darling spin tales about him and his adventures. While his ego may seem inflated at times, even his arch-nemesis James Hook, Captain of the Jolly Roger ship, knows that Peter's no ordinary boy. He can fly without wings and match Hook's cutlass with nothing more than a dagger. He is also the undisputed leader of the Lost Boys and allows no breaks in ranks. Time makes little difference to him; when you never grow up, life is nothing but fun, whimsy, and adventure.</p>
+							<p>Peter travels from the enchanted isle of Never Land all the way to London just to hear Wendy Darling spin tales about him and his adventures. While his ego may seem inflated at times, even his arch-nemesis James Hook, Captain of the Jolly Roger ship, knows that Peter's no ordinary boy. He can fly without wings. When you never grow up, life is nothing but fun, whimsy, and adventure.</p>
 							<p><a href="https://en.wikipedia.org/wiki/Peter_Pan_(1953_film)">Learn more about Peter Pan &xrarr;</a></p>
 						</div>
 					</div>
@@ -147,19 +148,18 @@
 			</div>
 
 			<div class="block_2">
-				<h2>Join our free subscription service</h2>
+				<h3>Join our free subscription service</h3>
 				<p>Our subscription service delivers the latest news about customer education activities straight to your inbox. Register online for all information and links. This free service will also keep you up to date with our education activities such as webinars and Hot Topics videos.</p>
-				<form>
-				<input class ="fill_info" type="email" name="email" placeholder="your@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-				<input class="btn_submit" type="submit" name="Send" value="Submit"/>
+				<form action="https://jsonplaceholder.typicode.com/posts" class="email_input" method="post">
+				<input class ="email" type="email" name="email" placeholder="your@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+				<input class="btn btn_submit" type="submit" name="Send" value="Submit"/>
 				</form>
 				<div class="modal_form"> 
-					<h2>Excellent choice:)</h2>
-					<input class="send_btn" type="submit" name="Send" value="Submit"/>
+
 				</div>
 				<div class="overlay"></div>
 			</div>
-			<div class="block_3">
+			<div class="block_3" id="block_3">
 				<h2 data-text="Services">Services</h2>
 				<p>Our aim is to tactic the client’s desire with innovative solutions!</p>
 				<div class="carousel">
@@ -195,95 +195,105 @@
 					</div>
 				</div>
 			</div>
-			<div class="block_4">
+			<div class="block_4" id="block_4">
 				<h2 data-text="Team">Our Team</h2>
 				<p>Here’s the people that make up The PMStudio. Get to know us!</p>
 				<div class="team">
 				<div class="first">	
+					<div>
 					<section>
-						<span>
-						<img src="images/Michael.jpg" alt="team1">
 						<h3>Michael</h3>
 						<p>CEO</p>
-						</span>
+						<img src="images/Michael.jpg" alt="team1">	
 					</section>
+					</div>
+					<div>
 					<section>
-						<span>
-						<img src="images/Adam.jpg" alt="team1">
 						<h3>Adam</h3>
-						<p>General Manager</p></span>
+						<p>General Manager</p>
+						<img src="images/Adam.jpg" alt="team1">
 					</section>
+					</div>
+					<div>
 					<section>
-						<span><img src="images/Anna.jpg" alt="team1">
 						<h3>Anna</h3>
 						<p>Web Developer</p>
-						</span>
+						<img src="images/Anna.jpg" alt="team1">
 					</section>
+					</div>
+					<div>
 					<section>
-						<span><img src="images/Eugene.jpg" alt="team1">
 						<h3>Eugene</h3>
 						<p>Art Direktor</p>
-						</span>
+						<img src="images/Eugene.jpg" alt="team1">
 					</section>
+					</div>
 					</div>
 					<div class="second">
+					<div>
 					<section>
-						<span><img src="images/Sasha.jpg" alt="team1">
 						<h3>Sasha</h3>
 						<p>Web Designer</p>
-						</span>
-					</section>
-					<section>
-						<span><img src="images/Oskar.jpg" alt="team1">
-						<h3>Oskar</h3>
-						<p>IT Manager</p>
-						</span>
-					</section>
-					<section>
-						<span><img src="images/Marry.jpg" alt="team1">
-						<h3>Marry</h3>
-						<p>Front-End Developer</p>
-						</span>
-					</section>
-					<section>
-						<span><img src="images/Sandra.jpg" alt="team1">
-						<h3>Sandra</h3>
-						<p>Graphics & Motion Maker</p>
-						</span>
+						<img src="images/Sasha.jpg" alt="team1">
 					</section>
 					</div>
-					<div class="third">
+					<div>
 					<section>
-						<span><img src="images/Julia.jpg" alt="team1">
+						<h3>Oskar</h3>
+						<p>IT Manager</p>
+						<img src="images/Oskar.jpg" alt="team1">	
+					</section>
+					</div>
+					<div>
+					<section>
+						<h3>Marry</h3>
+						<p>Front-End Developer</p>
+						<img src="images/Marry.jpg" alt="team1">
+					</section>
+					</div>
+					<div>
+					<section>
+						<h3>Sandra</h3>
+						<p>Graphics &amp; Motion Maker</p>
+						<img src="images/Sandra.jpg" alt="team1">
+					</section>
+					</div>
+					</div>
+					<div class="third">
+					<div>
+					<section>
 						<h3>Julia</h3>
 						<p>Senior Account Manager</p>
-						</span>
+						<img src="images/Julia.jpg" alt="team1">
 					</section>
+					</div>
+					<div>
 					<section>
-						<span><img src="images/Brad.jpg" alt="team1">
 						<h3>Brad</h3>
 						<p>Lead Developer</p>
-						</span>
+						<img src="images/Brad.jpg" alt="team1">
 					</section>
+					</div>
+					<div>
 					<section>
-						<span><img src="images/Zac.jpg" alt="team1">
 						<h3>Zac</h3>
 						<p>UI Visualist</p>
-						</span>
+						<img src="images/Zac.jpg" alt="team1">
 					</section>
-					
+					</div>
+					<div>
 					<section>
-						<span><img src="images/Vanessa.jpg" alt="team1">
 						<h3>Vanessa</h3>
 						<p>Office Manager</p>
-						</span>
+						<img src="images/Vanessa.jpg" alt="team1">	
 					</section>
+					</div>
 					</div>	
 				</div>
 			</div>
-			<div class="block_5">
+			<div class="block_5" id="block_5">
 				<h2 data-text="Skills">Our Skills</h2>
-				<p>Here’s the people that make up The PMStudio. Get to know us!</p>
+				<p>We've gathered a wealth of knowledge on the services</p>
 				<div class="flex-container">
 					<div class="progressbar" data-animate="false">
 						<div class="circle" data-percent="100">
@@ -311,109 +321,106 @@
 					</div>
 				</div>
 			</div>
-			<div class="block_6">
+			<div class="block_6" id="block_6">
 				<h2 data-text="Facts">Our company by numbers</h2>
 				<p>Some interesting facts about us</p>
 				<div class="flex-container counter">
-					<section>
-						<span class="count count_item_1" data="2569">0</span>
+					<div>
+						<div class="count count_item_1" data-weight="2569">0</div>
 						<p>Cups of coffee consumed this year</p>
-					</section>
-					<section>
-						<span class="count count_item_2" data="6784">0</span>
+					</div>
+					<div>
+						<div class="count count_item_2" data-weight="6784">0</div>
 						<p>Lines of code created last week</p>
-					</section>
-					<section>
-						<span class="count count_item_3" data="36">0</span>
+					</div>
+					<div>
+						<div class="count count_item_3" data-weight="36">0</div>
 						<p>Websites developed in last 2 years</p>
-					</section>
-					<section>
-						<span class="count count_item_4" data="248">0</span>
+					</div>
+					<div>
+						<div class="count count_item_4" data-weight="248">0</div>
 						<p>Emails recieved last month</p>
-					</section>
+					</div>
 				</div>
 			</div>
-			<div class="block_7">
+			<div class="block_7" id="block_7">
 				<h2 data-text="Portfolio">Our Portfolio</h2>
-				<p>Here’s the people that make up The PMStudio. Get to know us!</p>
-				<section class="filter">
+				<p>We’re proud of the work we’ve done, and the unique depth of knowledge it has allowed us to work, for the benefit of future clients.</p>
+				<div class="filter">
 					<div class="btn-wrap">
-						<button class="btn all" tabindex="-1">ALL</button> 
-						<button class="btn lion" tabindex="-1">Lion the King</button>
-						<button class="btn beauty" tabindex="-1">Beauty and the Beast</button>
-						<button class="btn peter" tabindex="-1">Peter Pan</button>
-						<button class="btn rapunzel" tabindex="-1">Rapunzel</button>
-						<button class="btn mickey" tabindex="-1">Mickey the Mouse</button>
+						<button class="btn btn_all" tabindex="-1">ALL</button> 
+						<button class="btn btn_lion" tabindex="-1">Lion the King</button>
+						<button class="btn btn_beauty" tabindex="-1">Beauty and the Beast</button>
+						<button class="btn btn_peter" tabindex="-1">Peter Pan</button>
+						<button class="btn btn_rapunzel" tabindex="-1">Rapunzel</button>
+						<button class="btn btn_mickey" tabindex="-1">Mickey the Mouse</button>
 					</div>
 					<div class="filter__items">
-						<span class="lion">
+						<span title="portfolio_pic" class="lion">
 							<img src="images/lion_1.jpg" alt="lion_1">
 						</span>
-						<span class="mickey">
+						<span title="portfolio_pic" class="mickey">
 							<img src="images/mickey_1.jpg" alt="mickey_1">
 						</span>
-						<span class="peter">
+						<span title="portfolio_pic" class="peter">
 							<img src="images/peter_1.jpg" alt="peter_1">
 						</span>
-						<span class="mickey">
+						<span title="portfolio_pic"  class="mickey">
 							<img src="images/mickey_2.jpg" alt="mickey_2">
 						</span>
-						<span class="lion">
+						<span title="portfolio_pic"  class="lion">
 							<img src="images/lion_2.jpg" alt="lion_2">
 						</span>
-						<span class="mickey">
+						<span title="portfolio_pic"  class="mickey">
 							<img src="images/mickey_3.jpg" alt="mickey_3">
 						</span>
-						<span class="lion">
+						<span title="portfolio_pic"  class="lion">
 							<img src="images/lion_3.jpg" alt="lion_3">
 						</span>
-						<span class="peter">
+						<span title="portfolio_pic"  class="peter">
 							<img src="images/peter_2.jpg" alt="peter_2">
 						</span>
-						<span class="mickey">
+						<span title="portfolio_pic"  class="mickey">
 							<img src="images/mickey_4.jpg" alt="mickey_4">
 						</span>
-						<span class="rapunzel">
+						<span title="portfolio_pic"  class="rapunzel">
 							<img src="images/rapunzel_2.jpg" alt="rapunzel_2">
 						</span>
-						<span class="beauty">
+						<span title="portfolio_pic"  class="beauty">
 							<img src="images/beauty_1.jpg" alt="beauty_1">
 						</span>
-						<span class="lion">
+						<span title="portfolio_pic"  class="lion">
 							<img src="images/lion_4.jpg" alt="lion_4">
 						</span>
-						<span class="beauty">
+						<span title="portfolio_pic"  class="beauty">
 							<img src="images/beauty_2.jpg" alt="beauty_2">
 						</span>
-						<span class="peter">
+						<span title="portfolio_pic"  class="peter">
 							<img src="images/peter_3.jpg" alt="peter_3">
 						</span>
-						<span class="lion">
+						<span title="portfolio_pic"  class="lion">
 							<img src="images/lion_5.jpg" alt="lion_5">
 						</span>
-						<span class="rapunzel">
+						<span title="portfolio_pic"  class="rapunzel">
 							<img src="images/rapunzel_4.jpg" alt="rapunzel_4">
 						</span>
-						<span class="beauty">
+						<span title="portfolio_pic"  class="beauty">
 							<img src="images/beauty_3.jpg" alt="beauty_3">
 						</span>
-						<span class="rapunzel">
+						<span title="portfolio_pic"  class="rapunzel">
 							<img src="images/rapunzel_3.png" alt="rapunzel_3">
 						</span>
-						<span class="beauty">
-							<img src="images/beauty_4.jpg" alt="beauty_4">
-						</span>
 					</div>
-				</section>  
+				</div>  
 			</div>
-			<div class="block_8">
+			<div class="block_8" id="block_8">
 				<h2 data-text="FAQ">FAQ</h2>
-				<p>Some interesting facts about us</p>
+				<p>Here you can access the answers to frequently asked questions on our company.</p>
 				<ul class="accordion">
 					<li>
 						<a class="toggle" href="javascript:void(0);">Who is PMStudio?</a>
 						<ul class="inner">
-							<p>PMStudio is your one stop shop to turn your idea straight into animated imagery. For each project we’ll sit down and decide who’s the best director fit for the film. And sometimes you even get the complete triform of directors for the price of one, because we always work closely together; this keeps us sharp! Even though the threesome are directors we all have our specialty within the field of computer animation, thus everyone of us will always be closely related to an aspect of your film. Together we will make sure that whatever we produce will result in a compelling and fresh form of advertising/entertainment.</p>
+							<li><p>PMStudio is your one stop shop to turn your idea straight into animated imagery. For each project we’ll sit down and decide who’s the best director fit for the film. And sometimes you even get the complete triform of directors for the price of one, because we always work closely together; this keeps us sharp! Even though the threesome are directors we all have our specialty within the field of computer animation, thus everyone of us will always be closely related to an aspect of your film. Together we will make sure that whatever we produce will result in a compelling and fresh form of advertising/entertainment.</p></li>
 						</ul>
 					</li>
 				  
@@ -421,7 +428,7 @@
 						<a class="toggle" href="javascript:void(0);">What does PMStudio do?</a>
 						<ul class="inner">
 							<li>
-								<a href="#" class="toggle">Concepting</a>
+								<a href="#" class="toggle_in">Concepting</a>
 								<div class="inner">
 									<p>
 									Concept art is a form of illustration used to convey an idea for use in films, video games, animation, comic books, or other media before it is put into the final product. Concept art is also referred to as visual development and/or concept design. This term can also be applied to retail, set, fashion, architectural, and industrial design.
@@ -429,7 +436,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="#" class="toggle">Animation</a>
+								<a href="javascript:void(0);" class="toggle_in">Animation</a>
 								<div class="inner">
 									<p>
 									Animation is the process of making the illusion of motion and the illusion of change by means of the rapid succession of sequential images that minimally differ from each other. The illusion—as in motion pictures in general—is thought to rely on the phi phenomenon and beta movement, but the exact causes are still unclear.
@@ -437,7 +444,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="#" class="toggle">Compositing</a>
+								<a href="javascript:void(0);" class="toggle_in">Compositing</a>
 								<div class="inner">
 									<p>
 									Compositing is the combining of visual elements from separate sources into single images, often to create the illusion that all those elements are parts of the same scene. Live-action shooting for compositing is variously called "chroma key", "blue screen", "green screen" and other names. Today, most, though not all, compositing is achieved through digital image manipulation. Pre-digital compositing techniques, however, go back as far as the trick films of Georges Méliès in the late 19th century; and some are still in use.
@@ -450,13 +457,13 @@
 					<li>
 						<a class="toggle" href="javascript:void(0);">Motto</a>
 						<ul class="inner">
-							<h3>“Animation is collaboration.”</h3>
-							<p>By listening, delivering and discussing with our clients we feel that we’re able to bond and really create each animation as a collaborative piece of art. We are committed to delivering high-end visual products on time and make sure both the wishes of the clients and our own guiding art direction are upheld.</p>
+							<li><h3>“Animation is collaboration.”</h3>
+							<p>By listening, delivering and discussing with our clients we feel that we’re able to bond and really create each animation as a collaborative piece of art. We are committed to delivering high-end visual products on time and make sure both the wishes of the clients and our own guiding art direction are upheld.</p></li>
 						</ul>
 					</li>
 				</ul>
 			</div>
-			<div class="block_9">
+			<div class="block_9" id="block_9">
 				<h2 data-text="Prices">Pricing Guide</h2>
 				<p>Custom, Reliable &amp; Affordable Animation Services</p>
 				<ul class="pricing_table">
@@ -535,12 +542,11 @@
 					</li>
 				</ul>
 			</div>
-			<div class="block_10">
+			<div class="block_10" id="block_10">
 				<h2 data-text="Contacts">Contact us</h2>
-				<p>Custom, Reliable &amp; Affordable Animation Services</p>
-				<form action="mailto:taleksa550@gmail.com" enctype="text/plain">
-					<input type="text" name="name" placeholder="Name" required />
-					<input type="email" name="email" placeholder="your@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
+				<form action="https://jsonplaceholder.typicode.com/posts" class="form_input" method="post">
+					<input type="text" class="name_info" name="name" placeholder="Name" required />
+					<input type="email" class="email_info" name="email" placeholder="your@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
 					<textarea name="message" placeholder="Message"></textarea>
 					<input type="submit" class="btn send_btn" name="Send" value="Send">
 				</form>
@@ -559,12 +565,19 @@
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.4305061277473!2d5.12676631550981!3d52.09009617973508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66f51f95046e9%3A0x8158ae2b4b3dcc!2zTWFsaWVzaW5nZWwgMjRBLCAzNTgxIEJHIFV0cmVjaHQsINCd0LjQtNC10YDQu9Cw0L3QtNGL!5e0!3m2!1sru!2sua!4v1498501096259" allowfullscreen></iframe>
 				</div>
 			</div>
+
 		</div>
+		<footer>
+			<h2>Copyright 2017. PMStudio</h2>
+			<div id="scrollup"><img alt="Scroll up" src="images/up.png"></div>
+		</footer>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/classie.js"></script>
 	<script src="js/dynamics.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/viewportchecker.js"></script>
+
 </body>
 </html>

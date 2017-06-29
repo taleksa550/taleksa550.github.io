@@ -1,7 +1,57 @@
+jQuery(document).ready(function() {
+jQuery('h2').addClass("hidden").viewportChecker({
+classToAdd: 'visible animated fadeInLeft',
+offset: 50
+});
+});
+
+$(document).ready(function(){
+	$('nav ul li a').click(function () {
+		elementClick = $(this).attr('href');
+		destination = $(elementClick).offset().top;
+		$('body, html').animate({scrollTop: destination }, 800);
+	});
+});
+
+
+$(document).ready(function(){
+	$(function (){
+		$("#scrollup").hide();
+
+	$(window).scroll(function(){
+			if ($(window).scrollTop() > 0){
+				$('#scrollup').fadeIn();
+			} else{
+				$('#scrollup').fadeOut();
+			}
+		});
+		$('#scrollup').click(function (){
+			$('body, html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+});
+
+
 jQuery.fn.clickToggle = function(a,b) {
   	var ab = [b,a];
   	return this.on("click", function(){ ab[this._tog^=1].call(this); });
 };
+
+$(function () {                                      
+    $('.menu a').each(function () {            
+        var location = window.location.href;
+        var link = this.href;
+        if(location == link) {
+            $(this).addClass('menu__item--on-page');
+    } else {
+    		return false
+    }
+
+});
+});
 
 $('.hamburger').click(function(){
 	$(this).toggleClass('hamburger--cross').find('.hamburger__item').toggleClass('hamburger__item--cross');
@@ -12,6 +62,36 @@ $('.hamburger').click(function(){
      $('.menu-wrapper').animate({
 		right: '-60%'}, 1000)
 });
+
+
+$('.email_input').submit(function(e){
+	e.preventDefault();
+	var email = $('.email').val();
+	var url = $(this).attr('action');
+	$.post(url, {email: email}).done(function(data){
+		$('.overlay').fadeIn(400, 
+		 	function(){ 
+				$('.modal_form') 
+					.css('display', 'block')
+					.append('<h4>Hello, '+data.email+'</h4>')
+					.animate({opacity: 1, top: '50%'}, 200); 
+					
+		});
+	});
+	
+	$('.send_btn, .overlay').click( function(){ 
+		$('.modal_form')
+			.animate({opacity: 0, top: '45%'}, 200,  
+				function(){ 
+					$(this).css('display', 'none') 
+					$('.overlay').fadeOut(400) 
+					$('.modal_form').empty()
+				}
+			);
+$('.email_input').trigger('reset');
+	});
+})
+
 
 $(document).on('click', ".carousel-button-right",function(){ 
 	var carusel = $(this).parents('.carousel');
@@ -41,10 +121,6 @@ function right_carusel(carusel){
    }); 
 }
 
-// Навели курсор на карусель
-$(document).on('mouseenter', '.carousel', function(){$(this).addClass('hover')})
-//Убрали курсор с карусели
-$(document).on('mouseleave', '.carousel', function(){$(this).removeClass('hover')})
 
 
 $.circleProgress = {
@@ -235,7 +311,7 @@ var stop = $(".block_5").offset().top;
             $(window).off("scroll");
             $('.count').each(function () {
                 var $this = $(this);
-                jQuery({ Counter: 0 }).animate({ Counter: $this.attr('data') }, {
+                jQuery({ Counter: 0 }).animate({ Counter: $this.attr('data-weight') }, {
                     duration: 4000,
                     easing: 'swing',
                     step: function () {
@@ -251,25 +327,26 @@ var fActive = '';
  
 function filterName(name){
  if(fActive != name){
- 	$('span').filter('.'+name).show('slow');
- 	$('span').filter(':not(.'+name+')').hide('slow');
+ 	$('[title = portfolio_pic]').filter('.'+name).show('slow');
+ 	$('[title = portfolio_pic]').filter(':not(.'+name+')').hide('slow');
  fActive = name;
  }
 }
  
-$('.lion').click(function(){ filterName('lion'); });
-$('.beauty').click(function(){ filterName('beauty'); });
-$('.mickey').click(function(){ filterName('mickey'); });
-$('.rapunzel').click(function(){ filterName('rapunzel'); });
-$('.peter').click(function(){ filterName('peter'); });
+$('.btn_lion').click(function(){ filterName('lion'); });
+$('.btn_beauty').click(function(){ filterName('beauty'); });
+$('.btn_mickey').click(function(){ filterName('mickey'); });
+$('.btn_rapunzel').click(function(){ filterName('rapunzel'); });
+$('.btn_peter').click(function(){ filterName('peter'); });
  
-$('.all').click(function(){
- $('span').show(1000);
+$('.btn_all').click(function(){
+ $('[title = portfolio_pic]').show(1000);
  fActive = 'all';
 });
 });
 
-$('.toggle').click(function(e) {
+
+$('.toggle, .toggle_in').click(function(e) {
   	e.preventDefault();
   
     var $this = $(this);
@@ -285,4 +362,21 @@ $('.toggle').click(function(e) {
     }
 });
 
+$('.form_input').submit(function(e){
+	e.preventDefault();
+
+	var name = $('.name_info').val();
+	var email = $('.email_info').val();
+	var url = $(this).attr('action');
+
+
+	$.post(url, {name: name, email: email}).done(function(data){
+		
+			console.log(data)
+			$('.form_input').trigger('reset');
+		});
+	
+
+	});
+	
 
