@@ -135,8 +135,8 @@
 
 .zoomer__area {
 
-	width: 96px;
-	height: 118px;
+	width: 315px;
+	height: 200px;
 }
 
 
@@ -182,6 +182,7 @@
 	top: 0;
 	left: -100%;
 	overflow: hidden;
+	overflow-y: scroll;
 	width: 100%;
 	height: 100vh;
 	background: #18191b;
@@ -224,7 +225,6 @@
 	font-size: 56px;
 	font-weight: normal;
 	margin: 0;
-	letter-spacing: 0.3;
 }
 
 .content h3 {
@@ -232,13 +232,11 @@
 	font-weight: normal;
 	margin: 4px 0 8px;
 	color: #685884;
-	letter-spacing: 0.3;
 }
 
 .content p {
 	font-size: 20px;
 	line-height: 1.5;
-	letter-spacing: 0.3;
 }
 
 .content__item-img {
@@ -403,4 +401,25 @@
 }
 
 
-
+@media screen and (max-width: 800px) {
+	.content__item {
+		display: block;
+	}
+	.content__item-img {
+		max-width: calc(100% - 80px);
+		max-height: 70vh;
+	}
+	.content h2 {
+		font-size: 24px;
+	}
+	.content h3 {
+		font-size: 20px;
+	}
+	.content p {
+		font-size: 16px;
+	}
+	.content__item-inner {
+		font-size: 82%;
+		padding: 64px 48px 32px;
+	}
+}
