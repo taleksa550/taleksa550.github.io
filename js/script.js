@@ -1,9 +1,57 @@
-jQuery(document).ready(function() {
-jQuery('h2').addClass("hidden").viewportChecker({
+// анимация появления заголовков
+
+$(document).ready(function() {
+$('h2').addClass("hidden").viewportChecker({
 classToAdd: 'visible animated fadeInLeft',
 offset: 50
 });
 });
+
+// плавный скролл
+if (window.matchMedia('(min-width: 767px)').matches) {
+var anchors = [];
+var currentAnchor = -1;
+var isAnimating  = false;
+
+$(function(){
+    
+    function updateAnchors() {
+        anchors = [];
+        $('.main').each(function(i, element){
+            anchors.push( $(element).offset().top );
+        });
+    }
+    
+    $('body').on('mousewheel', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        if( isAnimating ) {
+            return false;
+        }
+        isAnimating  = true;
+        if( e.originalEvent.wheelDelta >= 0 ) {
+            currentAnchor--;
+        }else{
+            currentAnchor++;
+        }
+        if( currentAnchor > (anchors.length - 1) 
+           || currentAnchor < 0 ) {
+            currentAnchor = 11;
+        }
+        isAnimating  = true;
+        $('html, body').animate({
+            scrollTop: parseInt( anchors[currentAnchor] )
+        }, 500, 'swing', function(){
+            isAnimating  = false;
+        });
+    });
+
+    updateAnchors();   
+    
+});
+};
+
+// планый переход к пунктам меню
 
 $(document).ready(function(){
 	$('nav ul li a').click(function () {
@@ -13,7 +61,7 @@ $(document).ready(function(){
 	});
 });
 
-
+//скролл на начало страницы, по стрелке снизу
 $(document).ready(function(){
 	$(function (){
 		$("#scrollup").hide();
@@ -34,6 +82,7 @@ $(document).ready(function(){
 	});
 });
 
+// пояление меню
 
 jQuery.fn.clickToggle = function(a,b) {
   	var ab = [b,a];
@@ -49,7 +98,6 @@ $(function () {
     } else {
     		return false
     }
-
 });
 });
 
@@ -60,9 +108,10 @@ $('.hamburger').click(function(){
 		right: '0'}, 1000)
 }, function() {
      $('.menu-wrapper').animate({
-		right: '-60%'}, 1000)
+		right: '-120px'}, 1000)
 });
 
+//появление модального окна
 
 $('.email_input').submit(function(e){
 	e.preventDefault();
@@ -92,6 +141,7 @@ $('.email_input').trigger('reset');
 	});
 })
 
+//карусель
 
 $(document).on('click', ".carousel-button-right",function(){ 
 	var carusel = $(this).parents('.carousel');
@@ -121,7 +171,7 @@ function right_carusel(carusel){
    }); 
 }
 
-
+//круглые прогрессбары
 
 $.circleProgress = {
 
@@ -290,6 +340,7 @@ $(document).ready(function ($) {
                     startAngle: -Math.PI / 2,
                     value: percent / 100,
                     thickness: 12,
+                    size: 150,
                     fill: {
                         color: '#00ffde'
                     }
@@ -304,6 +355,7 @@ $(document).ready(function ($) {
     $(window).scroll(animateElements);
 });
 
+// счетчики
 
 var stop = $(".block_5").offset().top;
     $(window).scroll(function() {
@@ -321,6 +373,8 @@ var stop = $(".block_5").offset().top;
             });
         }
     });
+
+//фильтр по картинкам
 
 $(document).ready(function ($) {
 var fActive = '';
@@ -345,6 +399,7 @@ $('.btn_all').click(function(){
 });
 });
 
+//табы (аккордеон)
 
 $('.toggle, .toggle_in').click(function(e) {
   	e.preventDefault();
@@ -362,6 +417,8 @@ $('.toggle, .toggle_in').click(function(e) {
     }
 });
 
+//отправка данных (вывод в консоль)
+
 $('.form_input').submit(function(e){
 	e.preventDefault();
 
@@ -375,8 +432,6 @@ $('.form_input').submit(function(e){
 			console.log(data)
 			$('.form_input').trigger('reset');
 		});
-	
-
 	});
 	
 

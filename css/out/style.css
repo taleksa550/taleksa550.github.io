@@ -115,7 +115,7 @@ body, html {
         width: 64px;
         height: 64px;
         display: block;
-        background-image: url(../images/logo_main.png);
+        background-image: url(**/images/logo_main.png);
         background-repeat: no-repeat; }
     body .header .menu-wrapper, html .header .menu-wrapper {
       background-color: rgba(255, 255, 255, 0.3);

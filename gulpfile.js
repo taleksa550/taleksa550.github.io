@@ -11,13 +11,12 @@ var browserSync = require('browser-sync');
 gulp.task('sass', function () {
   return gulp.src('css/*.sass')
     .pipe(sass())
-    .pipe(gulp.dest('out/'));
+    .pipe(gulp.dest('css/out/'));
 });
 
 gulp.task ('css', function() {
-  return gulp.src('out/*')
+  return gulp.src('css/out/*')
     .pipe(concatCss("/style.css"))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(''))
     ;
 });
