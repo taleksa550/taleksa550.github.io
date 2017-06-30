@@ -115,16 +115,16 @@ body, html {
         width: 64px;
         height: 64px;
         display: block;
-        background-image: url(../images/logo_main.png);
+        background-image: url(../../images/logo_main.png);
         background-repeat: no-repeat; }
     body .header .menu-wrapper, html .header .menu-wrapper {
       background-color: rgba(255, 255, 255, 0.3);
-      position: absolute;
+      position: fixed;
       z-index: 999;
       padding: 24px 16px;
-      width: 120px;
+      width: 180px;
       top: 0;
-      right: -120px;
+      right: -180px;
       border-radius: 30px; }
       body .header .menu-wrapper .menu, html .header .menu-wrapper .menu {
         padding: 0;

@@ -7,50 +7,6 @@ offset: 50
 });
 });
 
-// плавный скролл
-if (window.matchMedia('(min-width: 767px)').matches) {
-var anchors = [];
-var currentAnchor = -1;
-var isAnimating  = false;
-
-$(function(){
-    
-    function updateAnchors() {
-        anchors = [];
-        $('.main').each(function(i, element){
-            anchors.push( $(element).offset().top );
-        });
-    }
-    
-    $('body').on('mousewheel', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        if( isAnimating ) {
-            return false;
-        }
-        isAnimating  = true;
-        if( e.originalEvent.wheelDelta >= 0 ) {
-            currentAnchor--;
-        }else{
-            currentAnchor++;
-        }
-        if( currentAnchor > (anchors.length - 1) 
-           || currentAnchor < 0 ) {
-            currentAnchor = 11;
-        }
-        isAnimating  = true;
-        $('html, body').animate({
-            scrollTop: parseInt( anchors[currentAnchor] )
-        }, 500, 'swing', function(){
-            isAnimating  = false;
-        });
-    });
-
-    updateAnchors();   
-    
-});
-};
-
 // планый переход к пунктам меню
 
 $(document).ready(function(){
@@ -108,7 +64,7 @@ $('.hamburger').click(function(){
 		right: '0'}, 1000)
 }, function() {
      $('.menu-wrapper').animate({
-		right: '-120px'}, 1000)
+		right: '-180px'}, 1000)
 });
 
 //появление модального окна
@@ -179,7 +135,7 @@ $.circleProgress = {
 
         value: 0,
 
-        size: 100,
+        size: 150,
 
         startAngle: -Math.PI,
 
@@ -334,13 +290,12 @@ $(document).ready(function ($) {
             var percent = $(this).find('.circle').attr('data-percent');
             var percentage = parseInt(percent, 10) / parseInt(100, 10);
             var animate = $(this).data('animate');
-            if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
+            if (elementPos < topOfWindow + $(window).height() - 10 && !animate) {
                 $(this).data('animate', true);
                 $(this).find('.circle').circleProgress({
                     startAngle: -Math.PI / 2,
                     value: percent / 100,
                     thickness: 12,
-                    size: 150,
                     fill: {
                         color: '#00ffde'
                     }

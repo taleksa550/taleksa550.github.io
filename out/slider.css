@@ -134,9 +134,8 @@
 }
 
 .zoomer__area {
-
-	width: 315px;
-	height: 200px;
+	width: 80px;
+	height: 150px;
 }
 
 
@@ -273,7 +272,7 @@
 	width: 32px;
 	height: 32px;
 	display: block;
-	background-image: url(../images/sprite.png);
+	background-image: url(../../images/sprite.png);
 	background-position: -40px -1428px;
 	background-repeat: no-repeat;
 }
@@ -283,7 +282,7 @@
 	width: 32px;
 	height: 32px;
 	display: block;
-	background-image: url(../images/sprite.png);
+	background-image: url(../../images/sprite.png);
 	background-position: -76px -1356px;
 	background-repeat: no-repeat;
 }
@@ -293,7 +292,7 @@
 	width: 100px;
 	height: 16px;
 	display: block;
-	background-image: url(../images/sprite.png);
+	background-image: url(../../images/sprite.png);
 	background-position: -4px -1338px;
 	background-repeat: no-repeat;
 }
@@ -303,7 +302,7 @@
 	width: 100px;
 	height: 16px;
 	display: block;
-	background-image: url(../images/sprite.png);
+	background-image: url(../../images/sprite.png);
 	background-position: -4px -1320px;
 	background-repeat: no-repeat;
 }
