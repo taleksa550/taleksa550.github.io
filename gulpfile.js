@@ -3,7 +3,8 @@ var concatCss = require('gulp-concat-css');
 var cleanCSS = require('gulp-clean-css');
 var uncss = require('gulp-uncss');
 var sass = require('gulp-sass');
-var watchSass = require("gulp-watch-sass")
+var watchSass = require("gulp-watch-sass");
+var minifyCSS = require('gulp-minify-css');
 var browserSync = require('browser-sync');
 
 
@@ -11,23 +12,17 @@ var browserSync = require('browser-sync');
 gulp.task('sass', function () {
   return gulp.src('css/*.sass')
     .pipe(sass())
-    .pipe(gulp.dest('css/out/'));
+    
+    .pipe(gulp.dest('out/'));
 });
 
 gulp.task ('css', function() {
-  return gulp.src('css/out/*')
-    .pipe(concatCss("/style.css"))
+  return gulp.src('out/*')
+    .pipe(concatCss("/style.min.css"))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(minifyCSS())
     .pipe(gulp.dest(''))
     ;
-});
-gulp.task('server', function() {
-    browserSync({
-        server: {
-            baseDir: ''
-        },
-        files: ['*.html', 'out/**/*.css'],
-        port: 8080
-    });
 });
 
 
